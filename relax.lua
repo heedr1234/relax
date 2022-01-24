@@ -2268,7 +2268,7 @@ if not msg.ControllerBot then
 return LuaTele.sendText(msg_chat_id,msg_id,'\n*⌔︙هاذا الامر يخص { '..Controller_Num(1)..' }* ',"md",true)  
 end
 --os.execute('rm -rf relax.lua')
---download('https://raw.githubusercontent.com/Sourcerelax/relax/master/relax.lua','relax.lua')
+--download('https://raw.githubusercontent.com/drtpp/relax/master/relax.lua','relax.lua')
 return LuaTele.sendText(msg_chat_id,msg_id,'\n*⌔︙تم تحديث السورس * ',"md",true)  
 end
 if text == 'جلب النسخه الاحتياطيه ⌔' or text == 'جلب نسخه احتياطيه' then
@@ -9035,7 +9035,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*⌔︙مطور البوت : {*['.
 end
 end
 if text == 'السورس' or text == 'سورس' or text == 'يا سورس' or text == 'source' then
-photo = "https://t.me/ooo6oo/1032"
+photo = "https://t.me/PHP_ABA/8006"
 local T =[[
 ٴ•━━━━━━𝘽,𝙍,𝘼━━━━━━━•ٴ 
 ]]
