@@ -12,7 +12,7 @@ local Methods = io.open("./luatele.lua","r")
 if Methods then
 URL.tdlua_CallBack()
 end
-SshId = io.popen("echo $SSH_CLIENT ︙ awk '. ‹ print $1}'"):read('*a')
+SshId = io.popen("echo $SSH_CLIENT ︙ awk '{ print $1}'"):read('*a')
 luatele = require 'luatele'
 local FileInformation = io.open("./Information.lua","r")
 if not FileInformation then
@@ -708,12 +708,12 @@ else
 UserInfousername = '['..UserInfo.first_name..'](tg://user?id='..UserId..')'
 end
 return {
-Lock     = '[- 𝘽,𝙍,𝘼 𝖲𝗈𝗎𝗋𝖼𝖾 .](https://t.me/ooo6oo)\n*ٴ•━━━━━━𝘽,𝙍,𝘼━━━━━━━•ٴ\n⌔︙بواسطه ← *'..UserInfousername..'\n*'..TextMsg..'\n⌔︙خاصيه المسح *',
-unLock   = '[- 𝘽,𝙍,𝘼 𝖲𝗈𝗎𝗋𝖼𝖾 .](https://t.me/ooo6oo)\n*ٴ•━━━━━━𝘽,𝙍,𝘼━━━━━━━•ٴ\n⌔︙بواسطه ← *'..UserInfousername..'\n'..TextMsg,
-lockKtm  = '[- 𝘽,𝙍,𝘼 𝖲𝗈𝗎𝗋𝖼𝖾 .](https://t.me/ooo6oo)\n*ٴ•━━━━━━𝘽,𝙍,𝘼━━━━━━━•ٴ\n⌔︙بواسطه ← *'..UserInfousername..'\n*'..TextMsg..'\n⌔︙خاصيه الكتم *',
-lockKid  = '[- 𝘽,𝙍,𝘼 𝖲𝗈𝗎𝗋𝖼𝖾 .](https://t.me/ooo6oo)\n*ٴ•━━━━━━𝘽,𝙍,𝘼━━━━━━━•ٴ\n⌔︙بواسطه ← *'..UserInfousername..'\n*'..TextMsg..'\n⌔︙خاصيه التقييد *',
-lockKick = '[- 𝘽,𝙍,𝘼 𝖲𝗈𝗎𝗋𝖼𝖾 .](https://t.me/ooo6oo)\n*ٴ•━━━━━━𝘽,𝙍,𝘼━━━━━━━•ٴ\n⌔︙بواسطه ← *'..UserInfousername..'\n*'..TextMsg..'\n⌔︙خاصيه الطرد *',
-Reply    = '[- 𝘽,𝙍,𝘼 𝖲𝗈𝗎𝗋𝖼𝖾 .](https://t.me/ooo6oo)\n*ٴ•━━━━━━𝘽,𝙍,𝘼━━━━━━━•ٴ\n⌔︙المستخدم ← *'..UserInfousername..'\n*'..TextMsg..'*'
+Lock     = '[- ROULETE 𝖲𝗈𝗎𝗋𝖼𝖾 .](https://t.me/ooo6oo)\n*ٴ•━━━━━━𝘽,𝙍,𝘼━━━━━━━•ٴ\n⌔︙بواسطه ← *'..UserInfousername..'\n*'..TextMsg..'\n⌔︙خاصيه المسح *',
+unLock   = '[- ROULETE 𝖲𝗈𝗎𝗋𝖼𝖾 .](https://t.me/ooo6oo)\n*ٴ•━━━━━━𝘽,𝙍,𝘼━━━━━━━•ٴ\n⌔︙بواسطه ← *'..UserInfousername..'\n'..TextMsg,
+lockKtm  = '[- ROULETE 𝖲𝗈𝗎𝗋𝖼𝖾 .](https://t.me/ooo6oo)\n*ٴ•━━━━━━𝘽,𝙍,𝘼━━━━━━━•ٴ\n⌔︙بواسطه ← *'..UserInfousername..'\n*'..TextMsg..'\n⌔︙خاصيه الكتم *',
+lockKid  = '[- ROULETE 𝖲𝗈𝗎𝗋𝖼𝖾 .](https://t.me/ooo6oo)\n*ٴ•━━━━━━𝘽,𝙍,𝘼━━━━━━━•ٴ\n⌔︙بواسطه ← *'..UserInfousername..'\n*'..TextMsg..'\n⌔︙خاصيه التقييد *',
+lockKick = '[- ROULETE 𝖲𝗈𝗎𝗋𝖼𝖾 .](https://t.me/ooo6oo)\n*ٴ•━━━━━━𝘽,𝙍,𝘼━━━━━━━•ٴ\n⌔︙بواسطه ← *'..UserInfousername..'\n*'..TextMsg..'\n⌔︙خاصيه الطرد *',
+Reply    = '[- ROULETE 𝖲𝗈𝗎𝗋𝖼𝖾 .](https://t.me/ooo6oo)\n*ٴ•━━━━━━𝘽,𝙍,𝘼━━━━━━━•ٴ\n⌔︙المستخدم ← *'..UserInfousername..'\n*'..TextMsg..'*'
 }
 end
 function StatusCanOrNotCan(ChatId,UserId)
@@ -1450,7 +1450,7 @@ local NewCmd = Redis:get(relax.."relax:Command:Reids:Group:New"..msg_chat_id)
 Redis:set(relax.."relax:Get:Reides:Commands:Group"..msg_chat_id..":"..text,NewCmd)
 Redis:sadd(relax.."relax:Command:List:Group"..msg_chat_id,text)
 Redis:del(relax.."relax:Command:Reids:Group:End"..msg_chat_id..":"..msg.sender.user_id)
-return LuaTele.sendText(msg_chat_id,msg_id,"⌔︙تم حفظ الامر باسم ← { "..text..' › .',"md",true)
+return LuaTele.sendText(msg_chat_id,msg_id,"⌔︙تم حفظ الامر باسم ← { "..text..' }',"md",true)
 end
 if Redis:get(relax.."relax:Set:Link"..msg_chat_id..""..msg.sender.user_id) then
 if text == "الغاء" then
@@ -2268,7 +2268,7 @@ if not msg.ControllerBot then
 return LuaTele.sendText(msg_chat_id,msg_id,'\n*⌔︙هاذا الامر يخص { '..Controller_Num(1)..' }* ',"md",true)  
 end
 --os.execute('rm -rf relax.lua')
---download('https://raw.githubusercontent.com/drtpp/relax/master/relax.lua','relax.lua')
+--download('https://raw.githubusercontent.com/Sourcerelax/relax/master/relax.lua','relax.lua')
 return LuaTele.sendText(msg_chat_id,msg_id,'\n*⌔︙تم تحديث السورس * ',"md",true)  
 end
 if text == 'جلب النسخه الاحتياطيه ⌔' or text == 'جلب نسخه احتياطيه' then
@@ -9035,18 +9035,18 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*⌔︙مطور البوت : {*['.
 end
 end
 if text == 'السورس' or text == 'سورس' or text == 'يا سورس' or text == 'source' then
-photo = "https://t.me/PHP_ABA/8006"
+photo = "https://t.me/ooo6oo/1032"
 local T =[[
-• { 𝘽,𝙍,𝘼 ~ 𝙎𝙊𝙐𝙍𝘾𝙀 }
+ٴ•━━━━━━𝘽,𝙍,𝘼━━━━━━━•ٴ 
 ]]
 keyboard = {} 
 keyboard.inline_keyboard = {
 
 {
-{text = '. ‹𝗗𝗲𝗩› .', url = "https://t.me/armof"},{text = '. ‹𝗗𝗲𝗩𝟐› .', url = "https://t.me/oo6oo "}
+{text = '𝗗𝗲𝗩', url = "https://t.me/armof"},{text = '𝗗𝗲𝗩𝟐', url = "https://t.me/oo6oo "}
 },
 {
-{text = ' . ‹𝘀𝗼𝘂𝗿𝗿𝗰› .', url = "https://t.me/ooo6oo"}
+{text = ' 𝘀𝗼𝘂𝗿𝗿𝗰', url = "https://t.me/ooo6oo"}
 },
 }
 local msgg = msg_id/2097152/0.5
@@ -9063,19 +9063,19 @@ local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
 {
-{text = '. ‹ 𝟏 › .', data = msg.sender.user_id..'/help1'}, {text = '. ‹ 𝟐 › .', data = msg.sender.user_id..'/help2'}, 
+{text = '{ 𝟏 }', data = msg.sender.user_id..'/help1'}, {text = '{ 𝟐 }', data = msg.sender.user_id..'/help2'}, 
 },
 {
-{text = '. ‹ 𝟑 › .', data = msg.sender.user_id..'/help3'}, {text = '. ‹ 𝟒 › .', data = msg.sender.user_id..'/help4'}, 
+{text = '{ 𝟑 }', data = msg.sender.user_id..'/help3'}, {text = '{ 𝟒 }', data = msg.sender.user_id..'/help4'}, 
 },
 {
-{text = '. ‹ 𝟓 › .', data = msg.sender.user_id..'/help5'}, {text = '. ‹ الالعاب › .', data = msg.sender.user_id..'/help6'}, 
+{text = '{ اوامر القفل / الفتح }', data = msg.sender.user_id..'/NoNextSeting'}, 
 },
 {
-{text = '. ‹ اوامر القفل / الفتح › .', data = msg.sender.user_id..'/NoNextSeting'},
+{text = '{ 𝟓 }', data = msg.sender.user_id..'/help5'}, {text = '{ الالعاب }', data = msg.sender.user_id..'/help6'}, 
 },
 {
- {text = '. ‹ اوامر التعطيل / التفعيل › .', data = msg.sender.user_id..'/listallAddorrem'}, 
+{text = '{ اوامر التعطيل / التفعيل }', data = msg.sender.user_id..'/listallAddorrem'}, 
 },
 {
 {text = 'ٴ•━━━━━━𝘽,𝙍,𝘼━━━━━━━•ٴ', url = 't.me/ooo6oo'}, 
@@ -9085,11 +9085,12 @@ data = {
 return LuaTele.sendText(msg_chat_id,msg_id, [[*
 ⌔︙توجد ← 5 اوامر في البوت
 ٴ•━━━━━━𝘽,𝙍,𝘼━━━━━━━•ٴ
-⌔︙ارسل { م1 } ← اوامر الحمايه
-⌔︙ارسل { م2 } ← اوامر الادمنيه
-⌔︙ارسل { م3 } ← اوامر المدراء
-⌔︙ارسل { م4 } ← اوامر المنشئين
-⌔︙ارسل { م5 } ← اوامر مطورين البوت
+⌔︙ارسل . ‹ م1 › . ~ اوامر الحمايه
+⌔︙ارسل . ‹ م2 › . ~ اوامر الادمنيه
+⌔︙ارسل . ‹ م3 › . ~ اوامر المدراء
+⌔︙ارسل . ‹ م4 › . ~ اوامر المنشئين
+⌔︙ارسل . ‹ م5 › . ~ اوامر المطور
+ٴ•━━━━━━𝘽,𝙍,𝘼━━━━━━━•ٴ
 *]],"md",false, false, false, false, reply_markup)
 elseif text == 'م1' then
 if not msg.Addictive then
@@ -9103,7 +9104,7 @@ local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
 {
-{text = '. ‹ قائمه الاوامر › .', data = msg.sender.user_id..'/helpall'},
+{text = '{ قائمه الاوامر }', data = msg.sender.user_id..'/helpall'},
 },
 {
 {text = 'ٴ•━━━━━━𝘽,𝙍,𝘼━━━━━━━•ٴ', url = 't.me/ooo6oo'}, 
@@ -9123,7 +9124,7 @@ local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
 {
-{text = '. ‹ قائمه الاوامر › .', data = msg.sender.user_id..'/helpall'},
+{text = '{ قائمه الاوامر }', data = msg.sender.user_id..'/helpall'},
 },
 {
 {text = 'ٴ•━━━━━━𝘽,𝙍,𝘼━━━━━━━•ٴ', url = 't.me/ooo6oo'}, 
@@ -9143,7 +9144,7 @@ local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
 {
-{text = '. ‹ قائمه الاوامر › .', data = msg.sender.user_id..'/helpall'},
+{text = '{ قائمه الاوامر }', data = msg.sender.user_id..'/helpall'},
 },
 {
 {text = 'ٴ•━━━━━━𝘽,𝙍,𝘼━━━━━━━•ٴ', url = 't.me/SNAYBIR'}, 
@@ -9163,7 +9164,7 @@ local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
 {
-{text = '. ‹ قائمه الاوامر › .', data = msg.sender.user_id..'/helpall'},
+{text = '{ قائمه الاوامر }', data = msg.sender.user_id..'/helpall'},
 },
 {
 {text = 'ٴ•━━━━━━𝘽,𝙍,𝘼━━━━━━━•ٴ', url = 't.me/ooo6oo'}, 
@@ -9183,7 +9184,7 @@ local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
 {
-{text = '. ‹ قائمه الاوامر › .', data = msg.sender.user_id..'/helpall'},
+{text = '{ قائمه الاوامر }', data = msg.sender.user_id..'/helpall'},
 },
 {
 {text = 'ٴ•━━━━━━𝘽,𝙍,𝘼━━━━━━━•ٴ', url = 't.me/ooo6oo'}, 
@@ -9203,7 +9204,7 @@ local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
 {
-{text = '. ‹ قائمه الاوامر › .', data = msg.sender.user_id..'/helpall'},
+{text = '{ قائمه الاوامر }', data = msg.sender.user_id..'/helpall'},
 },
 {
 {text = 'ٴ•━━━━━━𝘽,𝙍,𝘼━━━━━━━•ٴ', url = 't.me/ooo6oo'}, 
@@ -9825,13 +9826,13 @@ local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
 {
-{text = '𝟏 » { 👊 › .', data = '/Mahibes1'}, {text = '𝟐 » { 👊 › .', data = '/Mahibes2'}, 
+{text = '𝟏 » { 👊 }', data = '/Mahibes1'}, {text = '𝟐 » { 👊 }', data = '/Mahibes2'}, 
 },
 {
-{text = '𝟑 » { 👊 › .', data = '/Mahibes3'}, {text = '𝟒 » { 👊 › .', data = '/Mahibes4'}, 
+{text = '𝟑 » { 👊 }', data = '/Mahibes3'}, {text = '𝟒 » { 👊 }', data = '/Mahibes4'}, 
 },
 {
-{text = '𝟓 » { 👊 › .', data = '/Mahibes5'}, {text = '𝟔 » { 👊 › .', data = '/Mahibes6'}, 
+{text = '𝟓 » { 👊 }', data = '/Mahibes5'}, {text = '𝟔 » { 👊 }', data = '/Mahibes6'}, 
 },
 }
 }
@@ -10802,13 +10803,13 @@ local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
 {
-{text = ' { Ogg - بصمه › .', data = 'oggidu@'..IdUser..'idv@'..listYt[3]}, 
+{text = ' { Ogg - بصمه }', data = 'oggidu@'..IdUser..'idv@'..listYt[3]}, 
 },
 {
-{text = ' { Mp3 - ملف صوتي › .', data = 'mp3idu@'..IdUser..'idv@'..listYt[3]},  {text = ' { Mp4 - فيديو › .', data = 'mp4idu@'..IdUser..'idv@'..listYt[3]}, 
+{text = ' { Mp3 - ملف صوتي }', data = 'mp3idu@'..IdUser..'idv@'..listYt[3]},  {text = ' { Mp4 - فيديو }', data = 'mp4idu@'..IdUser..'idv@'..listYt[3]}, 
 },
 {
-{text = '. ‹ الغاء الامر › .', data = 'idu@'..IdUser..'delamr'},
+{text = '{ الغاء الامر }', data = 'idu@'..IdUser..'delamr'},
 },
 }
 }
@@ -10875,16 +10876,16 @@ local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
 {
-{text = '𝟏 » { '..Mahibes1..' › .', data = '/*'}, {text = '𝟐 » { '..Mahibes2..' › .', data = '/*'}, 
+{text = '𝟏 » { '..Mahibes1..' }', data = '/*'}, {text = '𝟐 » { '..Mahibes2..' }', data = '/*'}, 
 },
 {
-{text = '𝟑 » { '..Mahibes3..' › .', data = '/*'}, {text = '𝟒 » { '..Mahibes4..' › .', data = '/*'}, 
+{text = '𝟑 » { '..Mahibes3..' }', data = '/*'}, {text = '𝟒 » { '..Mahibes4..' }', data = '/*'}, 
 },
 {
-{text = '𝟓 » { '..Mahibes5..' › .', data = '/*'}, {text = '𝟔 » { '..Mahibes6..' › .', data = '/*'}, 
+{text = '𝟓 » { '..Mahibes5..' }', data = '/*'}, {text = '𝟔 » { '..Mahibes6..' }', data = '/*'}, 
 },
 {
-{text = '. ‹ اللعب مره اخرى › .', data = '/MahibesAgane'},
+{text = '{ اللعب مره اخرى }', data = '/MahibesAgane'},
 },
 }
 }
@@ -10895,13 +10896,13 @@ local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
 {
-{text = '𝟏 » { 👊 › .', data = '/Mahibes1'}, {text = '𝟐 » { 👊 › .', data = '/Mahibes2'}, 
+{text = '𝟏 » { 👊 }', data = '/Mahibes1'}, {text = '𝟐 » { 👊 }', data = '/Mahibes2'}, 
 },
 {
-{text = '𝟑 » { 👊 › .', data = '/Mahibes3'}, {text = '𝟒 » { 👊 › .', data = '/Mahibes4'}, 
+{text = '𝟑 » { 👊 }', data = '/Mahibes3'}, {text = '𝟒 » { 👊 }', data = '/Mahibes4'}, 
 },
 {
-{text = '𝟓 » { 👊 › .', data = '/Mahibes5'}, {text = '𝟔 » { 👊 › .', data = '/Mahibes6'}, 
+{text = '𝟓 » { 👊 }', data = '/Mahibes5'}, {text = '𝟔 » { 👊 }', data = '/Mahibes6'}, 
 },
 }
 }
@@ -10919,16 +10920,16 @@ local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
 {
-{text = '. ‹ 𝟏 › .', data = IdUser..'/help1'}, {text = '. ‹ 𝟐 › .', data = IdUser..'/help2'}, 
+{text = '{ 𝟏 }', data = IdUser..'/help1'}, {text = '{ 𝟐 }', data = IdUser..'/help2'}, 
 },
 {
-{text = '. ‹ 𝟑 › .', data = IdUser..'/help3'}, {text = '. ‹ 𝟒 › .', data = IdUser..'/help4'}, 
+{text = '{ 𝟑 }', data = IdUser..'/help3'}, {text = '{ 𝟒 }', data = IdUser..'/help4'}, 
 },
 {
-{text = '. ‹ 𝟓 › .', data = IdUser..'/help5'}, {text = '. ‹ الالعاب › .', data = IdUser..'/help6'}, 
+{text = '{ 𝟓 }', data = IdUser..'/help5'}, {text = '{ الالعاب }', data = IdUser..'/help6'}, 
 },
 {
-{text = '. ‹ القائمه الرئيسيه › .', data = IdUser..'/helpall'},
+{text = '{ القائمه الرئيسيه }', data = IdUser..'/helpall'},
 },
 {
 {text = 'ٴ•━━━━━━𝘽,𝙍,𝘼━━━━━━━•ٴ', url = 't.me/ooo6oo'}, 
@@ -10977,16 +10978,16 @@ local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
 {
-{text = '. ‹ 𝟏 › .', data = IdUser..'/help1'}, {text = '. ‹ 𝟐 › .', data = IdUser..'/help2'}, 
+{text = '{ 𝟏 }', data = IdUser..'/help1'}, {text = '{ 𝟐 }', data = IdUser..'/help2'}, 
 },
 {
-{text = '. ‹ 𝟑 › .', data = IdUser..'/help3'}, {text = '. ‹ 𝟒 › .', data = IdUser..'/help4'}, 
+{text = '{ 𝟑 }', data = IdUser..'/help3'}, {text = '{ 𝟒 }', data = IdUser..'/help4'}, 
 },
 {
-{text = '. ‹ 𝟓 › .', data = IdUser..'/help5'}, {text = '. ‹ الالعاب › .', data = IdUser..'/help6'}, 
+{text = '{ 𝟓 }', data = IdUser..'/help5'}, {text = '{ الالعاب }', data = IdUser..'/help6'}, 
 },
 {
-{text = '. ‹ القائمه الرئيسيه › .', data = IdUser..'/helpall'},
+{text = '{ القائمه الرئيسيه }', data = IdUser..'/helpall'},
 },
 {
 {text = 'ٴ•━━━━━━𝘽,𝙍,𝘼━━━━━━━•ٴ', url = 't.me/ooo6oo'}, 
@@ -11036,16 +11037,16 @@ local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
 {
-{text = '. ‹ 𝟏 › .', data = IdUser..'/help1'}, {text = '. ‹ 𝟐 › .', data = IdUser..'/help2'}, 
+{text = '{ 𝟏 }', data = IdUser..'/help1'}, {text = '{ 𝟐 }', data = IdUser..'/help2'}, 
 },
 {
-{text = '. ‹ 𝟑 › .', data = IdUser..'/help3'}, {text = '. ‹ 𝟒 › .', data = IdUser..'/help4'}, 
+{text = '{ 𝟑 }', data = IdUser..'/help3'}, {text = '{ 𝟒 }', data = IdUser..'/help4'}, 
 },
 {
-{text = '. ‹ 𝟓 › .', data = IdUser..'/help5'}, {text = '. ‹ الالعاب › .', data = IdUser..'/help6'}, 
+{text = '{ 𝟓 }', data = IdUser..'/help5'}, {text = '{ الالعاب }', data = IdUser..'/help6'}, 
 },
 {
-{text = '. ‹ القائمه الرئيسيه › .', data = IdUser..'/helpall'},
+{text = '{ القائمه الرئيسيه }', data = IdUser..'/helpall'},
 },
 {
 {text = 'ٴ•━━━━━━𝘽,𝙍,𝘼━━━━━━━•ٴ', url = 't.me/ooo6oo'}, 
@@ -11089,16 +11090,16 @@ local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
 {
-{text = '. ‹ 𝟏 › .', data = IdUser..'/help1'}, {text = '. ‹ 𝟐 › .', data = IdUser..'/help2'}, 
+{text = '{ 𝟏 }', data = IdUser..'/help1'}, {text = '{ 𝟐 }', data = IdUser..'/help2'}, 
 },
 {
-{text = '. ‹ 𝟑 › .', data = IdUser..'/help3'}, {text = '. ‹ 𝟒 › .', data = IdUser..'/help4'}, 
+{text = '{ 𝟑 }', data = IdUser..'/help3'}, {text = '{ 𝟒 }', data = IdUser..'/help4'}, 
 },
 {
-{text = '. ‹ 𝟓 › .', data = IdUser..'/help5'}, {text = '. ‹ الالعاب › .', data = IdUser..'/help6'}, 
+{text = '{ 𝟓 }', data = IdUser..'/help5'}, {text = '{ الالعاب }', data = IdUser..'/help6'}, 
 },
 {
-{text = '. ‹ القائمه الرئيسيه › .', data = IdUser..'/helpall'},
+{text = '{ القائمه الرئيسيه }', data = IdUser..'/helpall'},
 },
 {
 {text = 'ٴ•━━━━━━𝘽,𝙍,𝘼━━━━━━━•ٴ', url = 't.me/ooo6oo'}, 
@@ -11129,16 +11130,16 @@ local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
 {
-{text = '. ‹ 𝟏 › .', data = IdUser..'/help1'}, {text = '. ‹ 𝟐 › .', data = IdUser..'/help2'}, 
+{text = '{ 𝟏 }', data = IdUser..'/help1'}, {text = '{ 𝟐 }', data = IdUser..'/help2'}, 
 },
 {
-{text = '. ‹ 𝟑 › .', data = IdUser..'/help3'}, {text = '. ‹ 𝟒 › .', data = IdUser..'/help4'}, 
+{text = '{ 𝟑 }', data = IdUser..'/help3'}, {text = '{ 𝟒 }', data = IdUser..'/help4'}, 
 },
 {
-{text = '. ‹ 𝟓 › .', data = IdUser..'/help5'}, {text = '. ‹ الالعاب › .', data = IdUser..'/help6'}, 
+{text = '{ 𝟓 }', data = IdUser..'/help5'}, {text = '{ الالعاب }', data = IdUser..'/help6'}, 
 },
 {
-{text = '. ‹ القائمه الرئيسيه › .', data = IdUser..'/helpall'},
+{text = '{ القائمه الرئيسيه }', data = IdUser..'/helpall'},
 },
 {
 {text = 'ٴ•━━━━━━𝘽,𝙍,𝘼━━━━━━━•ٴ', url = 't.me/ooo6oo'}, 
@@ -11184,16 +11185,16 @@ local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
 {
-{text = '. ‹ 𝟏 › .', data = IdUser..'/help1'}, {text = '. ‹ 𝟐 › .', data = IdUser..'/help2'}, 
+{text = '{ 𝟏 }', data = IdUser..'/help1'}, {text = '{ 𝟐 }', data = IdUser..'/help2'}, 
 },
 {
-{text = '. ‹ 𝟑 › .', data = IdUser..'/help3'}, {text = '. ‹ 𝟒 › .', data = IdUser..'/help4'}, 
+{text = '{ 𝟑 }', data = IdUser..'/help3'}, {text = '{ 𝟒 }', data = IdUser..'/help4'}, 
 },
 {
-{text = '. ‹ 𝟓 › .', data = IdUser..'/help5'}, {text = '. ‹ الالعاب › .', data = IdUser..'/help6'}, 
+{text = '{ 𝟓 }', data = IdUser..'/help5'}, {text = '{ الالعاب }', data = IdUser..'/help6'}, 
 },
 {
-{text = '. ‹ القائمه الرئيسيه › .', data = IdUser..'/helpall'},
+{text = '{ القائمه الرئيسيه }', data = IdUser..'/helpall'},
 },
 {
 {text = 'ٴ•━━━━━━𝘽,𝙍,𝘼━━━━━━━•ٴ', url = 't.me/ooo6oo'}, 
@@ -11225,22 +11226,19 @@ local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
 {
-{text = '. ‹ 𝟏 › .', data = IdUser..'/help1'}, {text = '. ‹ 𝟐 › .', data = IdUser..'/help2'}, 
+{text = '{ 𝟏 }', data = IdUser..'/help1'}, {text = '{ 𝟐 }', data = IdUser..'/help2'}, 
 },
 {
-{text = '. ‹ 𝟑 › .', data = IdUser..'/help3'}, {text = '. ‹ 𝟒 › .', data = IdUser..'/help4'}, 
+{text = '{ اوامر القفل / الفتح }', data = IdUser..'/NoNextSeting'}, {text = '{ اوامر التعطيل / التفعيل }', data = IdUser..'/listallAddorrem'}, 
 },
 {
-{text = '. ‹ 𝟓 › .', data = IdUser..'/help5'}, {text = '. ‹ الالعاب › .', data = IdUser..'/help6'}, 
+{text = '{ 𝟑 }', data = IdUser..'/help3'}, {text = '{ 𝟒 }', data = IdUser..'/help4'}, 
 },
 {
-{text = '. ‹ اوامر القفل / الفتح › .', data = IdUser..'/NoNextSeting'}, 
+{text = '{ 𝟓 }', data = IdUser..'/help5'}, {text = '{ الالعاب }', data = IdUser..'/help6'}, 
 },
 {
-{text = '. ‹ اوامر التعطيل / التفعيل › .', data = IdUser..'/listallAddorrem'}, 
-},
-{
-{text = 'ٴ•━━━━━━𝘽,𝙍,𝘼━━━━━━━•ٴ', url = 't.me/ooo6oo'}, 
+{text = '• قناة السورس', url = 't.me/ooo6oo'}, 
 },
 }
 }
@@ -12204,7 +12202,7 @@ data = {
 {text = 'تعطيل اطردني', data = IdUser..'/'.. 'unmute_kickme'},{text = 'تفعيل اطردني', data = IdUser..'/'.. 'mute_kickme'},
 },
 {
-{text = '. ‹ القائمه الرئيسيه › .', data = IdUser..'/helpall'},
+{text = '{ القائمه الرئيسيه }', data = IdUser..'/helpall'},
 },
 {
 {text = '- اخفاء الامر ', data =IdUser..'/'.. 'delAmr'}
@@ -12264,7 +12262,7 @@ data = {
 {text = '- الرجوع ... ', data =IdUser..'/'.. 'NoNextSeting'}
 },
 {
-{text = '. ‹ القائمه الرئيسيه › .', data = IdUser..'/helpall'},
+{text = '{ القائمه الرئيسيه }', data = IdUser..'/helpall'},
 },
 {
 {text = '- اخفاء الامر ', data =IdUser..'/'.. '/delAmr'}
@@ -12321,7 +12319,7 @@ data = {
 {text = '- التالي ... ', data =IdUser..'/'.. 'NextSeting'}
 },
 {
-{text = '. ‹ القائمه الرئيسيه › .', data = IdUser..'/helpall'},
+{text = '{ القائمه الرئيسيه }', data = IdUser..'/helpall'},
 },
 {
 {text = '- اخفاء الامر ', data =IdUser..'/'.. 'delAmr'}
