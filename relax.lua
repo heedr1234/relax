@@ -9035,7 +9035,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*⌔︙مطور البوت : {*['.
 end
 end
 if text == 'السورس' or text == 'سورس' or text == 'يا سورس' or text == 'source' then
-photo = "https://t.me/ooo6oo/1032"
+photo = "https://t.me/PHP_ABA/8006"
 local T =[[
 ٴ•━━━━━━𝘽,𝙍,𝘼━━━━━━━•ٴ 
 ]]
