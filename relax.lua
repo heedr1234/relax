@@ -2268,7 +2268,7 @@ if not msg.ControllerBot then
 return LuaTele.sendText(msg_chat_id,msg_id,'\n*⌔︙هاذا الامر يخص { '..Controller_Num(1)..' }* ',"md",true)  
 end
 --os.execute('rm -rf relax.lua')
---download('https://raw.githubusercontent.com/drttp/relax/master/relax.lua','relax.lua')
+--download('https://github.com/drtpp/relax/blob/main/relax.lua','relax.lua')
 return LuaTele.sendText(msg_chat_id,msg_id,'\n*⌔︙تم تحديث السورس * ',"md",true)  
 end
 if text == 'جلب النسخه الاحتياطيه ⌔' or text == 'جلب نسخه احتياطيه' then
@@ -13067,8 +13067,3 @@ end
 
 luatele.run(CallBackLua)
  
-
-
-
-
-
