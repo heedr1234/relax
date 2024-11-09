@@ -18,7 +18,7 @@ local FileInformation = io.open("./Information.lua","r")
 if not FileInformation then
 if not Redis:get(SshId.."Info:Redis:Token") then
 io.write('\27[1;31mارسل لي توكن البوت الان \nSend Me a Bot Token Now ↡\n\27[0;39;49m')
-local TokenBot = io.read()
+local TokenBot = io.read(7942664758:AAF1FwUZ4JY2umjKNT8WHKUATivCF4ZWpvc)
 if TokenBot and TokenBot:match('(%d+):(.*)') then
 local url , res = https.request('https://api.telegram.org/bot'..TokenBot..'/getMe')
 local Json_Info = JSON.decode(url)
@@ -38,7 +38,7 @@ os.execute('lua relax.lua')
 end
 if not Redis:get(SshId.."Info:Redis:User") then
 io.write('\27[1;31mارسل معرف المطور الاساسي الان \nDeveloper UserName saved ↡\n\27[0;39;49m')
-local UserSudo = io.read():gsub('@','')
+local UserSudo = io.read(@QQZ_I):gsub('@','')
 if UserSudo ~= '' then
 io.write('\n\27[1;34mتم حفظ معرف المطور \nDeveloper UserName saved \n\n\27[0;39;49m')
 Redis:set(SshId.."Info:Redis:User",UserSudo)
@@ -49,7 +49,7 @@ os.execute('lua relax.lua')
 end
 if not Redis:get(SshId.."Info:Redis:User:ID") then
 io.write('\27[1;31mارسل ايدي المطور الاساسي الان \nDeveloper ID saved ↡\n\27[0;39;49m')
-local UserId = io.read()
+local UserId = io.read(7771541214)
 if UserId and UserId:match('(%d+)') then
 io.write('\n\27[1;34mتم حفظ ايدي المطور \nDeveloper ID saved \n\n\27[0;39;49m')
 Redis:set(SshId.."Info:Redis:User:ID",UserId)
