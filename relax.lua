@@ -18,7 +18,7 @@ local FileInformation = io.open("./Information.lua","r")
 if not FileInformation then
 if not Redis:get(SshId.."Info:Redis:Token") then
 io.write('\27[1;31mارسل لي توكن البوت الان \nSend Me a Bot Token Now ↡\n\27[0;39;49m')
-local TokenBot = io.read()
+local TokenBot = io.read(7942664758:AAF1FwUZ4JY2umjKNT8WHKUATivCF4ZWpvc)
 if TokenBot and TokenBot:match('(%d+):(.*)') then
 local url , res = https.request('https://api.telegram.org/bot'..TokenBot..'/getMe')
 local Json_Info = JSON.decode(url)
